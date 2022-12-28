@@ -1,0 +1,29 @@
+{
+    "id": {"type": "string", "required": true},
+    "email": {"type": "string", "required": ["password", "!phone_number"]},
+    "name": {
+        "first_name": {"type": "string", "required": true},
+        "last_name": {"type": "string", "required": false}
+    },
+    "address": {
+        "street": {"type": "string", "required": true},
+        "city": {"type": "string", "required": true},
+        "postcode": {"type": "string", "required": true}
+    },
+    "password": {"type": "string", "required": ["email", "!phone_number"]},
+    "is_driver": {"type": "boolean", "required": true, "default": false},
+    "verification": {
+        "email_verification": {"type": "boolean", "required": true, "default": false},
+        "phone_verification": {"type": "boolean", "required": true, "default": false}
+    },
+    "phone_number": {"type": "string", "required": ["!email", "!password"]},
+    "avatar": {"type": "string", "required": false},
+    "coodinates": {
+        "longitude": {"type": "number", "required": false},
+        "latitude": {"type": "number", "required": false},
+        "orientation": {"type": "number", "required": false}
+    },
+    "createdAt": {"type": "string", "required": false},
+    "updatedAt": {"type": "string", "required": false},
+    "role": {"type": "enum", "required": false, "enum": ["admin", "customer", "buyer"]}
+}

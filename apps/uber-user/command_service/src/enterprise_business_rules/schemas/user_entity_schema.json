@@ -1,0 +1,27 @@
+{
+  "title": "IUserEntity",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "email": { "type": "string" },
+    "first_name": { "type": "string" },
+    "last_name": { "type": "string" },
+    "street": {"type": "string"},
+    "city": {"type": "string"},
+    "postcode": {"type": "string"},
+    "password": {"type": "string"},
+    "is_driver": {"type": "boolean", "default": false},
+    "email_verification": {"type": "boolean", "default": false},
+    "phone_verification": {"type": "boolean", "default": false},
+    "phone_number": {"type": "string"},
+    "avatar": {"type": "string"},
+    "longitude": {"type": "number"},
+    "latitude": {"type": "number"},
+    "orientation": {"type": "number"},
+    "createdAt": {"type": "string"},
+    "updatedAt": {"type": "string"},
+    "role": {"type": "string", "enum": ["admin", "customer", "buyer"]}
+},
+  "additionalProperties": false,
+  "required": ["id", "name.first_name", "address.street", "address.city", "address.postcode", "is_driver", "verification.email_verification", "verification.phone_verification"]
+}

@@ -1,0 +1,1 @@
+export const wrapper = <U extends (...args: any[]) => any>(func: U) => (...args: Parameters<U>) : ReturnType<U> => func(...args);
